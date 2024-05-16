@@ -1,6 +1,5 @@
 import { styles } from "../utils"
 import { NavLink } from "react-router-dom"
-import { connect } from 'react-redux';
 
 export default function Card (props) {
 

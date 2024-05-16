@@ -12,22 +12,31 @@ import FormPage from './components/FormPage.jsx';
 
 
 function App() {
+  console.log("renderiza en el cuerpo");
+  // *--------------------------------------------------------------------------------*
 
   const navigate = useNavigate()
   const location = useLocation()
   const dispatch = useDispatch()
 
+  // *--------------------------------------------------------------------------------*
+
   const allPokemons = useSelector((state) => state.allPokemons)
+
+  // *--------------------------------------------------------------------------------*
 
   const goHome = () => {
     navigate("/home")
   }
 
+  // *--------------------------------------------------------------------------------*
 
   useEffect(() => {
+    console.log("renderiza en el useeffect");
     dispatch(getPokemons())
   }, []);
-
+  
+  // *--------------------------------------------------------------------------------*
 
  async function onSearch(name) {
   if( name === "" || Number.isInteger(parseInt(name))){
@@ -54,6 +63,8 @@ function App() {
   }
 }
 
+  // *--------------------------------------------------------------------------------*
+
   return (
     <div className="App" >
 
@@ -75,5 +86,7 @@ function App() {
     </div>
   );
 }
+
+console.log("renderiza el componente");
 
 export default App;
